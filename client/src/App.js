@@ -1,41 +1,39 @@
-import { Routes, Route } from 'react-router-dom';
-import { About } from './components/views/About';
-import { Footer } from './components/views/Footer';
-import { Head } from './components/views/Head.js';
-// import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { About } from "./components/About/About";
+import { Catalog } from "./components/Catalog/Catalog";
 
-import { Home } from './components/views/Home';
+import { Footer } from "./components/Footer/Footer.js";
+import { Header } from "./components/Header/Header";
+import { Login } from "./components/Login/Login";
+import { MyWatchlit } from "./components/MyWatchlist/MyWatchlist.js";
+import { Register } from "./components/Register/Register";
+import { StockExplorer } from "./components/StockExplorer/StockExplorer";
 
-
-
-
-
-
-
+import { TabNav } from "./components/TabNav/TabNav";
 
 function App() {
-    return (
+  return (
     <>
-     <Head/>
+      <div style={{ marginLeft: "85px" }}>
+        <TabNav />
+      </div>
 
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/about' element={<About/>}/>
+      <div style={{ marginBottom: "830px" }}>
+        <Routes>
+          <Route path="/" element={<Header />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<h1>404</h1>} />
+          <Route path="/catalog" element={<Catalog />}></Route>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/explorer" element={<StockExplorer/>}/>
+          <Route path="/watchlist" element={<MyWatchlit/>}/>
+        </Routes>
+      </div>
 
-
-    </Routes>
-    
-    
-
-
-     <Footer/>
-
-   </>
-
-    );
+      <Footer />
+    </>
+  );
 }
 
 export default App;
-
-
-{/* <Route path='*' element={<h1>404</h1>} /> */}
