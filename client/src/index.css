@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .curtom-scrollbar.curtom-scrollbar::webkid-scrollbar {
+        width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb{
+        background-color: #a5b7ff;
+        width: 5px;
+        border-radius: 10px;
+    }
+};

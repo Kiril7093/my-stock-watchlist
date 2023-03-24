@@ -5,6 +5,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 
 import { Footer } from "./components/Footer/Footer.js";
 import { Header } from "./components/Header/Header";
+import Hero from "./components/Hero/Hero";
 import { Login } from "./components/Login/Login";
 import { MyWatchlit } from "./components/MyWatchlist/MyWatchlist.js";
 import { Register } from "./components/Register/Register";
@@ -36,6 +37,8 @@ function App() {
     // </>
 
     <Dashboard/>
+
+    // <Hero/>
   );
 }
 
