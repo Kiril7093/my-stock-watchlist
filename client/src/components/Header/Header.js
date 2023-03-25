@@ -1,5 +1,6 @@
 
 import Search from "../Search/Search";
+import { ThemeIcon } from "../ThemeIcon/ThemeIcon";
 
 
 const Header = ({name}) => {
@@ -9,16 +10,12 @@ const Header = ({name}) => {
     
   <h1 className="text-3xl">{name}</h1>
   <Search/>
-
+  
   </div>
 
-  {/* <ThemeIcon/> */}
+ <ThemeIcon/>
   
   </>
-    // <Card>
-    
-    // 
-    // </Card>
 
   );
 };

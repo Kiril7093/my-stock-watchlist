@@ -35,8 +35,8 @@ function App() {
 
     //   <Footer />
     // </>
-
-    <Dashboard/>
+      <div>Hello</div>
+    // <Dashboard/>
 
     // <Hero/>
   );
