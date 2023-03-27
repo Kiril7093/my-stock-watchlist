@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Stock Tracking Software
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application built with React for tracking stock prices. Users can create an account, add stocks to their watchlist, and track the changes in their prices. They can also remove stocks from the watchlist and edit them by changing the stock symbol. Additionally, the application utilizes the SoftUni Practice Server for the backend and includes a "Details" functionality to view individual stock details.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+### Prerequisites
 
-### `npm start`
+- Node.js installed on your machine (v12 or later)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository to your local machine.
+2. Open the project directory in the terminal.
+3. Run the command `npm install` to install the necessary dependencies.
 
-### `npm test`
+### Starting the Application
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. In the terminal, navigate to the project directory.
+2. Run the command `npm start` to start the development server.
+3. Open your web browser and go to `http://localhost:3000` to view the application.
 
-### `npm run build`
+### Dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The following dependencies are used in this project:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- "@headlessui/react": "^1.7.13"
+- "@heroicons/react": "^1.0.6"
+- "@testing-library/jest-dom": "^5.16.5"
+- "@testing-library/react": "^13.4.0"
+- "@testing-library/user-event": "^13.5.0"
+- "bootstrap": "^5.2.3"
+- "react": "^18.2.0"
+- "react-bootstrap": "^2.7.2"
+- "react-dom": "^18.2.0"
+- "react-router-dom": "^6.8.2"
+- "react-scripts": "^2.1.3"
+- "recharts": "^2.5.0"
+- "web-vitals": "^2.1.4"
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+- Users can create an account and login to the application.
+- Users can search and add stocks to their watchlist.
+- Users can view the current and historical prices of their watched stocks.
+- Users can view individual stock details.
+- Users can remove stocks from their watchlist.
+- Users can edit a stock by changing its symbol.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Server
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This application utilizes the SoftUni Practice Server for the backend.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
