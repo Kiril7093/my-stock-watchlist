@@ -1,2 +1,0 @@
-# equityView
-SoftUni React Project
