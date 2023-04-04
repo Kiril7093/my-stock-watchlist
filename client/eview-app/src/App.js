@@ -8,6 +8,7 @@ import { Dashboard } from './components/Dashboard/Dashboard';
 import { WatchList } from './components/WatchList/WatchList';
 import { Error404 } from './components/Error404/Error404';
 import { Login } from './components/Login/Login';
+import { Register } from './components/Register/Register';
 
 
 
@@ -25,6 +26,7 @@ function App() {
       <Route path='/watchlist' element={<WatchList/>}/>
       <Route path='*'  element={<Error404/>}/>
       <Route path='/login' element={<Login/>}/>
+      <Route path='/register' element={<Register/>}/>
    </Routes>
    <Footer/>
  
