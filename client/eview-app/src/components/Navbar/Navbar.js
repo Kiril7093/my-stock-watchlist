@@ -21,9 +21,14 @@ export const Navbar = () => {
 
 
         <div className="flex items-center justify-start md:justify-start pl-2 pr-10 ">
+
+          <Link to='/login'>
           <button className=" bg-zinc-300 border-none pl-5 pr-5 py-3 bg-transparent text-black mr-10">
-            Sign In
+            Login
           </button>
+          </Link>
+
+
           <button className="pl-5 pr-5 py-3 mr-20 border-none bg-indigo-700">Register</button>
         </div>
       </div>

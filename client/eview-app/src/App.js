@@ -7,6 +7,8 @@ import { Navbar } from './components/Navbar/Navbar';
 import { Dashboard } from './components/Dashboard/Dashboard';
 import { WatchList } from './components/WatchList/WatchList';
 import { Error404 } from './components/Error404/Error404';
+import { Login } from './components/Login/Login';
+
 
 
 
@@ -15,17 +17,21 @@ function App() {
   return (
     <>
 
-   <Navbar/>
+<Navbar/>
 
    <Routes>
       <Route path='/' element={<Hero/>}/>
       <Route path='/dashboard' element={<Dashboard/>}/>
       <Route path='/watchlist' element={<WatchList/>}/>
       <Route path='*'  element={<Error404/>}/>
+      <Route path='/login' element={<Login/>}/>
    </Routes>
-  
    <Footer/>
-  
+ 
+
+ 
+
+
     </>
   );
 }
