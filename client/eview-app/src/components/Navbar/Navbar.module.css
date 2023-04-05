@@ -16,17 +16,26 @@
     margin: 0 0.5rem;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: 550;
+    font-size: 1.3rem;
+    color: #4b5563;
   }
   
   .navlink:hover {
     background-color: transparent;
-    color: #4b5563;
+    color: #bfcbdc;
+   
   }
 
   ul{
-    padding-left: 11rem;
-    margin-left: 8rem;
+    padding-left: 8rem;
+    margin-left: 5rem;
+  }
+
+  .loginBtn:hover{
+    background-color: transparent;
+    color: #bfcbdc;
+
+
   }
   

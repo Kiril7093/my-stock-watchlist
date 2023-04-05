@@ -17,15 +17,15 @@ export const Navbar = () => {
           </li>
         </ul>
 
-        <div className='flex items-center justify-start md:justify-start pl-2 pr-10 '>
+        <div className='flex items-center justify-start md:justify-start pl-2 pr-10'>
           <Link to='/login'>
-            <button className=' bg-zinc-300 border-none pl-5 pr-5 py-3 bg-transparent text-black mr-10'>
+            <button className= {`bg-zinc-300 border-none pl-5 pr-5 py-3 bg-transparent text-black mr-10 hover:bg-gray-200`}>
               Login
             </button>
           </Link>
 
           <Link to='/register'>
-            <button className="pl-5 pr-5 py-3 mr-20 border-none bg-indigo-700">
+            <button className="pl-5 pr-5 py-3 mr-20 border-none bg-indigo-700 hover:bg-indigo-500">
               Register
             </button>
           </Link>

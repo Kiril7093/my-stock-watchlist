@@ -26,7 +26,7 @@ export const Hero = () => {
           </p>
 
           <button
-            className={`py-3 px-6 sm:w-[30%] my-4 bg-indigo-700 ${styles.heroButton}`}
+            className={`py-3 px-6 sm:w-[30%] my-4 bg-indigo-700 ${styles.heroButton} hover:bg-indigo-500`}
           >
             <Link to="/dashboard" className="text-white font-semibold">
               Get Started
