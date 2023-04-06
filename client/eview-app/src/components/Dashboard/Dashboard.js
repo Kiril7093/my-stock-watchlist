@@ -1,12 +1,13 @@
 import Search from "../Search/Search";
 import { useContext } from "react";
 import stockContext from "../../context/stockContext";
+import { LoadingCard } from "../LoadingCard/LoadingCard";
 
 export const Dashboard = () => {
   const { stockSymbol } = useContext(stockContext);
 
 
-  
+
   return (
     <>
       <div className="w-full h-screen bg-zinc-200 flex flex-col justify-between">
@@ -15,6 +16,10 @@ export const Dashboard = () => {
             Search stock symbol
           </label>
           <Search />
+        </div>
+
+        <div>
+            <LoadingCard/>
         </div>
       </div>
     </>

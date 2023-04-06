@@ -14,6 +14,7 @@ import { Register } from './components/Register/Register';
 import StockContext from './context/stockContext';
 
 import { useState } from 'react';
+import { TableCompanies } from './components/TableCompanies/TableCompanies';
 
 
 
@@ -41,7 +42,9 @@ function App() {
       </StockContext.Provider>
    <Footer/>
 
-   {/* <CandlestickChart/> */}
+   {/* <TableCompanies/> */}
+
+
  
 
  

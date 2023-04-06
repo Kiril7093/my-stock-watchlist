@@ -1,23 +1,19 @@
-import { useContext } from "react";
-import { useEffect} from "react";
+import { useContext, useEffect, useState } from "react";
 import StockContext from "../../context/stockContext.js";
-import {} from "../../api/stockApi"
+import { fetchQuote } from "../../api/stockApi";
 
+export const LoadingCard = () => {
+  const { StockSymbol } = useContext(StockContext);
+  const [quote, setQuote] = useState({});
 
+  useEffect(() => {
+    async function getQuote() {
+      const result = await fetchQuote(StockSymbol);
+      setQuote(result);
+    }
 
-export const LoadingCard=()=>{
-       
+    getQuote();
+  }, [StockSymbol]);
 
-    const {StockSymbol}=useContext(StockContext);
-
-    useEffect( function getQuote(){
-           
-
-
-    }, [StockSymbol]);
-
-    return(
-
-
-    )
-}
+  return <div>{JSON.stringify(quote)}</div>;
+};

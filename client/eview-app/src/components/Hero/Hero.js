@@ -20,10 +20,7 @@ export const Hero = () => {
           <p className="text-lg text-black py-7 my-7">
             EquityView makes it easy to monitor your favorite stocks and stay
             up-to-date on market trends. Keep track of your investments with
-            ease using EquityView. Please note that EquityView does not provide
-            any investment advice, and all investment decisions should be made
-            based on your own research and analysis.
-          </p>
+            ease using EquityView</p>
 
           <button
             className={`py-3 px-6 sm:w-[30%] my-4 bg-indigo-700 ${styles.heroButton} hover:bg-indigo-500`}
