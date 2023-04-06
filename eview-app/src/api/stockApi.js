@@ -3,28 +3,6 @@ const basePath = "https://finnhub.io/api/v1";
 
 
 
-export const searchSymbols = async (query) => {
-  console.log(process.env.REACT_APP_API_KEY);
-
-
-  const url = `${basePath}/search?q=${query}&token=${process.env.REACT_APP_API_KEY}`;
-
-
-  const response = await fetch(url);
-
-  if (!response.ok) {
-    const message = `An error has occured : ${response.status}`;
-
-    throw new Error(message);
-  }
-
-  return await response.json();
-};
-
-
-
-
-
 
 export const fetchStockDetails = async (stockSymbol) => {
   const url = `${basePath}/stock/profile2?symbol=${stockSymbol}&token=${process.env.REACT_APP_API_KEY}`;
@@ -41,7 +19,6 @@ export const fetchStockDetails = async (stockSymbol) => {
 
 
 
-
 export const fetchQuote = async (stockSymbol) => {
   const url = `${basePath}/quote?symbol=${stockSymbol}&token=${process.env.REACT_APP_API_KEY}`;
 
@@ -53,8 +30,13 @@ export const fetchQuote = async (stockSymbol) => {
     throw new Error(message);
   }
 
-  return await response.json();
+  let result= await response.json();
+
+
+  return result
 };
+
+
 
 
 

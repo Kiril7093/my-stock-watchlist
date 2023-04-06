@@ -36,21 +36,14 @@ const Search = () => {
   return (
     <div className="relative">
       <div className="flex item-center my-4 border-2 rounded-md z-50 w-96 bg-white border-neutral-200">
-        <input
-          type="text"
-          value={input}
-          className="w-full px-4 py-2 focus:outline-none rounded-md"
-          placeholder="Type stock symbol here..."
-          onChange={(event) => {
-            setInput(event.target.value);
-            updateBestMatches();
-          }}
-          onKeyDown={(event) => {
-            if (event.key === "Enter") {
-              updateBestMatches();
-            }
-          }}
-        />
+      
+      
+      
+      
+
+
+
+
 
         {input && (
           <button onClick={clear} className="m-1">
@@ -66,7 +59,7 @@ const Search = () => {
         </button>
       </div>
 
-      {showResults && (
+   {showResults && (
         <div className="absolute z-50 top-full left-0 w-full bg-white shadow-lg border-2 border-neutral-200 rounded-b-md">
           {bestMatches.length > 0 ? (
             <SearchResult results={bestMatches} />
@@ -74,7 +67,7 @@ const Search = () => {
             <p className="p-4 text-sm text-gray-500">No results found.</p>
           )}
         </div>
-      )}
+      )} 
     </div>
   );
 };

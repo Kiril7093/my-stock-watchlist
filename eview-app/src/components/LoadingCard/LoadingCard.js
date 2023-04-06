@@ -15,5 +15,5 @@ export const LoadingCard = () => {
     getQuote();
   }, [StockSymbol]);
 
-  return <div>{JSON.stringify(quote)}</div>;
+  // return <div>{JSON.stringify(quote)}</div>;
 };
