@@ -37,13 +37,6 @@ const Search = () => {
     <div className="relative">
       <div className="flex item-center my-4 border-2 rounded-md z-50 w-96 bg-white border-neutral-200">
       
-      
-      
-      
-
-
-
-
 
         {input && (
           <button onClick={clear} className="m-1">

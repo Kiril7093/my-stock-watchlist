@@ -18,23 +18,42 @@ function App() {
   const [stockSymbol, setStockSymbol] = useState('FB');
   const [input, setInput] = useState('');
 
+  const appStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+  };
+
+  const mainStyle = {
+    flexGrow: 1,
+    position: 'relative', // Make the main content relative
+  };
+
+  const footerStyle = {
+    position: 'fixed', // Keep the footer fixed at the bottom
+    bottom: 0,
+    width: '100%',
+  };
+
   return (
-    <>
+    <div style={appStyle}>
       <Navbar />
-      <InputContext.Provider value={{ input, setInput }}>
-        <StockContext.Provider value={{ stockSymbol, setStockSymbol }}>
-          <Routes>
-            <Route path="/" element={<Hero />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/watchlist" element={<WatchList />} />
-            <Route path="*" element={<Error404 />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Routes>
-        </StockContext.Provider>
-      </InputContext.Provider>
-      <Footer />
-    </>
+      <div style={mainStyle}>
+        <InputContext.Provider value={{ input, setInput }}>
+          <StockContext.Provider value={{ stockSymbol, setStockSymbol }}>
+            <Routes>
+              <Route path="/" element={<Hero />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/watchlist" element={<WatchList />} />
+              <Route path="*" element={<Error404 />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Routes>
+          </StockContext.Provider>
+        </InputContext.Provider>
+      </div>
+      <Footer style={footerStyle} />
+    </div>
   );
 }
 

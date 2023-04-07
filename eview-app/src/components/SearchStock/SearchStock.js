@@ -29,6 +29,7 @@ export const SearchStock = () => {
         } else {
           setError(new Error("There is no such stock!"));
           setStockSymbol(null);
+
         }
       })
       .catch((error) => {

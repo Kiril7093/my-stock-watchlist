@@ -32,7 +32,7 @@ export const fetchQuote = async (stockSymbol) => {
 
   let result= await response.json();
 
-
+  console.log(result);
   return result
 };
 
@@ -60,7 +60,7 @@ export const fetchHistoricalData = async (
 
   let result = await response.json();
 
-  console.log(result);
+
 
   return result;
 };

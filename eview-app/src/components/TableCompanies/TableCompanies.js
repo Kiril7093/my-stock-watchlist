@@ -1,85 +1,256 @@
-import React from 'react';
+
+import { useContext } from "react";
+import InputContext from "../../context/inputContext";
+
+
+
+
+
+
+
 
 export const TableCompanies = () => {
-  const companies = [
-    {
-      name: 'Tesla Inc.',
-      stockSymbol: 'TSLA',
-      companyProfile:
-        'Tesla is an American electric vehicle and clean energy company that designs and manufactures electric cars, battery energy storage, and solar panels.',
-    },
-    {
-      name: 'Johnson & Johnson',
-      stockSymbol: 'JNJ',
-      companyProfile:
-        'Johnson & Johnson is an American multinational corporation that develops medical devices, pharmaceuticals, and consumer health products.',
-    },
-    {
-      name: 'Apple Inc.',
-      stockSymbol: 'AAPL',
-      companyProfile:
-        'Apple Inc. is an American multinational technology company that designs, develops, and sells consumer electronics, computer software, and online services.',
-    },
-    {
-      name: 'Microsoft Corporation',
-      stockSymbol: 'MSFT',
-      companyProfile:
-        'Microsoft Corporation is an American multinational technology company that develops, licenses, and sells computer software, consumer electronics, personal computers, and related services.',
-    },
-    {
-      name: 'Amazon.com Inc.',
-      stockSymbol: 'AMZN',
-      companyProfile:
-        'Amazon.com Inc. is an American multinational technology company based in Seattle that focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence.',
-    },
-    {
-      name: 'Facebook Inc.',
-      stockSymbol: 'FB',
-      companyProfile:
-        'Facebook is an American social media conglomerate corporation based in Menlo Park, California.',
-    },
-    {
-      name: 'Alphabet Inc.',
-      stockSymbol: 'GOOGL',
-      companyProfile:
-        'Alphabet Inc. is an American multinational conglomerate headquartered in Mountain View, California.',
-    },
-    {
-      name: 'Berkshire Hathaway Inc.',
-      stockSymbol: 'BRK.A',
-      companyProfile:
-        'Berkshire Hathaway Inc. is an American multinational conglomerate holding company headquartered in Omaha, Nebraska.',
-    },
-    {
-      name: 'JP Morgan Chase & Co.',
-      stockSymbol: 'JPM',
-      companyProfile:
-        'JPMorgan Chase & Co. is an American multinational investment bank and financial services holding company headquartered in New York City.',
-    },
-  ];
+
+
+  const { input, setInput }= useContext(InputContext);
+
+
+  function updateInput(event){
+
+    const companySymbol=event.target.textContent;
+
+;
+
+    setInput(companySymbol)
+
+
+  }
+
+
+
+
+
 
   return (
-    <table className="table-auto w-full">
-      <thead>
-        <tr>
-          <th className="border px-4 py-2">Company Name</th>
-          <th className="border px-4 py-2">Stock Symbol</th>
-          <th className="border px-4 py-2">Company Profile</th>
-        </tr>
-      </thead>
+    <table>
       <tbody>
-        {companies.map((company) => (
-          <tr key={company.stockSymbol}>
-            <td className="border px-4 py-2">{company.name}</td>
-            <td className="border px-4 py-2">
-              <a href={`https://finance.yahoo.com/quote/${company.stockSymbol}`} target="_blank" rel="noreferrer">{company.stockSymbol}</a>
-            </td>
-            <td className="border px-4 py-2">{company.companyProfile}</td>
-          </tr>
-        ))}
+        <tr>
+          <td
+            className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
+            style={{ perspective: "1000px" }}
+
+            onClick={updateInput}
+          >
+            AAPL
+          </td>
+
+          <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
+            Apple Inc.
+          </td>
+        </tr>
+
+        <tr>
+          <td
+            className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
+            style={{ perspective: "1000px" }}
+            onClick={updateInput}
+          >
+            TSLA
+          </td>
+          <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
+            Tesla Inc.
+          </td>
+        </tr>
+        <tr>
+          <td
+            className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
+            style={{ perspective: "1000px" }}
+            onClick={updateInput}
+          >
+            AMZN
+          </td>
+          <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
+            Amazon.com Inc.
+          </td>
+        </tr>
+        <tr>
+          <td
+            className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
+            style={{ perspective: "1000px" }}
+            onClick={updateInput}
+          >
+            MSFT
+          </td>
+          <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
+            Microsoft Corporation
+          </td>
+        </tr>
+        <tr>
+          <td
+            className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
+            style={{ perspective: "1000px" }}
+            onClick={updateInput}
+          >
+            GOOG
+          </td>
+          <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
+            Alphabet Inc.
+          </td>
+        </tr>
+        <tr>
+          <td
+            className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
+            style={{ perspective: "1000px" }}
+            onClick={updateInput}
+          >
+            FB
+          </td>
+          <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
+            Facebook Inc.
+          </td>
+        </tr>
+        <tr>
+          <td
+            className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
+            style={{ perspective: "1000px" }}
+            onClick={updateInput}
+          >
+            NVDA
+          </td>
+          <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
+            NVIDIA Corporation
+          </td>
+        </tr>
+        <tr>
+          <td
+            className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
+            style={{ perspective: "1000px" }}
+            onClick={updateInput}
+          >
+            BABA
+          </td>
+          <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
+            Alibaba Group Holding Limited
+          </td>
+        </tr>
+        <tr>
+          <td
+            className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
+            style={{ perspective: "1000px" }}
+            onClick={updateInput}
+          >
+            JPM
+          </td>
+          <td className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform`}
+          style={{ perspective: "1000px" }}
+          onClick={updateInput}
+          >
+            JPMorgan Chase & Co.
+          </td>
+        </tr>
+
+        <tr>
+          <td className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
+          style={{ perspective: "1000px" }}
+          onClick={updateInput}
+
+          >
+            JNJ
+          </td>
+          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform"}
+          style={{ perspective: "1000px" }}
+          onClick={updateInput}
+          >
+            Johnson & Johnson
+          </td>
+        </tr>
+
+        <tr>
+          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
+                    style={{ perspective: "1000px" }}
+                    onClick={updateInput}
+          >
+            V
+          </td>
+          <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
+            Visa Inc.
+          </td>
+        </tr>
+        <tr>
+          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
+                    style={{ perspective: "1000px" }}
+                    onClick={updateInput}
+          >
+            MA
+          </td>
+          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform"}
+          >
+            Mastercard Incorporated
+          </td>
+        </tr>
+        <tr>
+          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
+                              style={{ perspective: "1000px" }}
+                              onClick={updateInput}
+          >
+            PG
+          </td>
+          <td className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform`}>
+            The Procter & Gamble Company
+          </td>
+        </tr>
+        <tr>
+          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
+          style={{ perspective: "1000px" }}
+          onClick={updateInput}
+          >
+            HD
+          </td>
+          <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
+            The Home Depot, Inc.
+          </td>
+        </tr>
+        <tr>
+          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
+                                        style={{ perspective: "1000px" }}
+                                        onClick={updateInput}>
+            DIS
+          </td>
+          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform"}
+                                        style={{ perspective: "1000px" }}
+                                        onClick={updateInput}
+          >
+            The Walt Disney Company
+          </td>
+        </tr>
+        <tr>
+          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
+                                        style={{ perspective: "1000px" }}
+                                        onClick={updateInput}
+          >
+            KO
+          </td>
+          <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
+            The Coca-Cola Company
+          </td>
+        </tr>
+        <tr>
+
+          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
+                                        style={{ perspective: "1000px" }}
+                                        onClick={updateInput}
+          >
+            PFE
+          </td>
+
+
+          <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
+            Pfizer Inc.
+          </td>
+
+          
+        </tr>
       </tbody>
     </table>
   );
 };
-
-
