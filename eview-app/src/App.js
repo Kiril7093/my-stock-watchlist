@@ -1,56 +1,98 @@
-import './App.css';
-import { Footer } from './components/Footer/Footer';
-import { Hero } from './components/Hero/Hero';
-import { Routes, Route } from 'react-router-dom';
-import { Navbar } from './components/Navbar/Navbar';
-import { Dashboard } from './components/Dashboard/Dashboard';
-import { WatchList } from './components/WatchList/WatchList';
-import { Error404 } from './components/Error404/Error404';
-import { Login } from './components/Login/Login';
-import { Register } from './components/Register/Register';
 
-import StockContext from './context/stockContext';
-import InputContext from './context/inputContext';
+import { useState } from "react";
 
-import { useState } from 'react';
+import "./App.css";
+
+import { Footer } from "./components/Footer/Footer";
+import { Hero } from "./components/Hero/Hero";
+import { Routes, Route } from "react-router-dom";
+import { Navbar } from "./components/Navbar/Navbar";
+import { Dashboard } from "./components/Dashboard/Dashboard";
+import { WatchList } from "./components/WatchList/WatchList";
+import { Error404 } from "./components/Error404/Error404";
+import { Login } from "./components/Login/Login";
+import { Register } from "./components/Register/Register";
+
+import StockDataContext from './context/StockDataContext'
+import StockArrayContext from "./context/StockArrayContext";
+
+
+
 
 function App() {
-  const [stockSymbol, setStockSymbol] = useState('FB');
-  const [input, setInput] = useState('');
+
+  
+
+  const [symbol, setSymbol] = useState('');
+  const [price, setPrice] = useState(null);
+  const [change, setChange] = useState(null);
+  const [changePercent, setChangePercent] = useState(null);
+  const [currency, setCurrency] = useState(null);
+ 
+  const clearStockData=()=>{
+    setSymbol('');
+    setPrice(null);
+    setChange(null);
+    setChangePercent(null)
+    setCurrency(null)
+  }
+
+
+  const stockData = {
+    symbol,
+    setSymbol,
+    price,
+    setPrice,
+    change,
+    setChange,
+    changePercent,
+    setChangePercent,
+    currency,
+    setCurrency,
+    clearStockData
+  };
+
+
+  const [stockArray, setStockArray]=useState([]);
+
+
+
 
   const appStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "100vh",
   };
 
   const mainStyle = {
     flexGrow: 1,
-    position: 'relative', // Make the main content relative
+    position: "relative", // Make the main content relative
   };
 
   const footerStyle = {
-    position: 'fixed', // Keep the footer fixed at the bottom
+    position: "fixed", // Keep the footer fixed at the bottom
     bottom: 0,
-    width: '100%',
+    width: "100%",
   };
 
   return (
     <div style={appStyle}>
       <Navbar />
       <div style={mainStyle}>
-        <InputContext.Provider value={{ input, setInput }}>
-          <StockContext.Provider value={{ stockSymbol, setStockSymbol }}>
-            <Routes>
-              <Route path="/" element={<Hero />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/watchlist" element={<WatchList />} />
-              <Route path="*" element={<Error404 />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-            </Routes>
-          </StockContext.Provider>
-        </InputContext.Provider>
+               
+             <StockDataContext.Provider value={stockData}>
+              <StockArrayContext.Provider value={{stockArray, setStockArray}}>
+              <Routes>
+                <Route path="/" element={<Hero />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/watchlist" element={<WatchList />} />
+                <Route path="*" element={<Error404 />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+              </Routes>
+              </StockArrayContext.Provider>
+           </StockDataContext.Provider> 
+
       </div>
       <Footer style={footerStyle} />
     </div>

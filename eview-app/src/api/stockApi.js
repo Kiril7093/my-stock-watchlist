@@ -1,9 +1,5 @@
 const basePath = "https://finnhub.io/api/v1";
 
-
-
-
-
 export const fetchStockDetails = async (stockSymbol) => {
   const url = `${basePath}/stock/profile2?symbol=${stockSymbol}&token=${process.env.REACT_APP_API_KEY}`;
   const response = await fetch(url);
@@ -30,14 +26,10 @@ export const fetchQuote = async (stockSymbol) => {
     throw new Error(message);
   }
 
-  let result= await response.json();
+  let result = await response.json();
 
-  console.log(result);
-  return result
+  return result;
 };
-
-
-
 
 
 
@@ -59,8 +51,6 @@ export const fetchHistoricalData = async (
   }
 
   let result = await response.json();
-
-
 
   return result;
 };

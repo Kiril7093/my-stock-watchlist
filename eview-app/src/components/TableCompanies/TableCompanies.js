@@ -1,35 +1,17 @@
-
 import { useContext } from "react";
-import InputContext from "../../context/inputContext";
 
-
-
-
-
-
-
+import StockDataContext from "../../context/StockDataContext";
 
 export const TableCompanies = () => {
+  const {
+    setSymbol,
+  } = useContext(StockDataContext);
 
+  function updateSymbol(event) {
+    const companySymbol = event.target.textContent;
 
-  const { input, setInput }= useContext(InputContext);
-
-
-  function updateInput(event){
-
-    const companySymbol=event.target.textContent;
-
-;
-
-    setInput(companySymbol)
-
-
+    setSymbol(companySymbol);
   }
-
-
-
-
-
 
   return (
     <table>
@@ -38,8 +20,7 @@ export const TableCompanies = () => {
           <td
             className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
             style={{ perspective: "1000px" }}
-
-            onClick={updateInput}
+            onClick={updateSymbol}
           >
             AAPL
           </td>
@@ -53,7 +34,7 @@ export const TableCompanies = () => {
           <td
             className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
             style={{ perspective: "1000px" }}
-            onClick={updateInput}
+            onClick={updateSymbol}
           >
             TSLA
           </td>
@@ -65,7 +46,7 @@ export const TableCompanies = () => {
           <td
             className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
             style={{ perspective: "1000px" }}
-            onClick={updateInput}
+            onClick={updateSymbol}
           >
             AMZN
           </td>
@@ -77,7 +58,7 @@ export const TableCompanies = () => {
           <td
             className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
             style={{ perspective: "1000px" }}
-            onClick={updateInput}
+            onClick={updateSymbol}
           >
             MSFT
           </td>
@@ -89,7 +70,7 @@ export const TableCompanies = () => {
           <td
             className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
             style={{ perspective: "1000px" }}
-            onClick={updateInput}
+            onClick={updateSymbol}
           >
             GOOG
           </td>
@@ -101,9 +82,9 @@ export const TableCompanies = () => {
           <td
             className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
             style={{ perspective: "1000px" }}
-            onClick={updateInput}
+            onClick={updateSymbol}
           >
-            FB
+         META
           </td>
           <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
             Facebook Inc.
@@ -113,7 +94,7 @@ export const TableCompanies = () => {
           <td
             className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
             style={{ perspective: "1000px" }}
-            onClick={updateInput}
+            onClick={updateSymbol}
           >
             NVDA
           </td>
@@ -121,11 +102,12 @@ export const TableCompanies = () => {
             NVIDIA Corporation
           </td>
         </tr>
+
         <tr>
           <td
             className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
             style={{ perspective: "1000px" }}
-            onClick={updateInput}
+            onClick={updateSymbol}
           >
             BABA
           </td>
@@ -133,42 +115,50 @@ export const TableCompanies = () => {
             Alibaba Group Holding Limited
           </td>
         </tr>
+
         <tr>
           <td
             className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
             style={{ perspective: "1000px" }}
-            onClick={updateInput}
+            onClick={updateSymbol}
           >
             JPM
           </td>
-          <td className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform`}
-          style={{ perspective: "1000px" }}
-          onClick={updateInput}
+          <td
+            className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform`}
+            style={{ perspective: "1000px" }}
+            onClick={updateSymbol}
           >
             JPMorgan Chase & Co.
           </td>
         </tr>
 
         <tr>
-          <td className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
-          style={{ perspective: "1000px" }}
-          onClick={updateInput}
-
+          <td
+            className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer`}
+            style={{ perspective: "1000px" }}
+            onClick={updateSymbol}
           >
             JNJ
           </td>
-          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform"}
-          style={{ perspective: "1000px" }}
-          onClick={updateInput}
+          <td
+            className={
+              "px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform"
+            }
+            style={{ perspective: "1000px" }}
+            onClick={updateSymbol}
           >
             Johnson & Johnson
           </td>
         </tr>
 
         <tr>
-          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
-                    style={{ perspective: "1000px" }}
-                    onClick={updateInput}
+          <td
+            className={
+              "px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"
+            }
+            style={{ perspective: "1000px" }}
+            onClick={updateSymbol}
           >
             V
           </td>
@@ -177,32 +167,46 @@ export const TableCompanies = () => {
           </td>
         </tr>
         <tr>
-          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
-                    style={{ perspective: "1000px" }}
-                    onClick={updateInput}
+          <td
+            className={
+              "px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"
+            }
+            style={{ perspective: "1000px" }}
+            onClick={updateSymbol}
           >
             MA
           </td>
-          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform"}
+          <td
+            className={
+              "px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform"
+            }
           >
             Mastercard Incorporated
           </td>
         </tr>
         <tr>
-          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
-                              style={{ perspective: "1000px" }}
-                              onClick={updateInput}
+          <td
+            className={
+              "px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"
+            }
+            style={{ perspective: "1000px" }}
+            onClick={updateSymbol}
           >
             PG
           </td>
-          <td className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform`}>
+          <td
+            className={`px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform`}
+          >
             The Procter & Gamble Company
           </td>
         </tr>
         <tr>
-          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
-          style={{ perspective: "1000px" }}
-          onClick={updateInput}
+          <td
+            className={
+              "px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"
+            }
+            style={{ perspective: "1000px" }}
+            onClick={updateSymbol}
           >
             HD
           </td>
@@ -210,23 +214,36 @@ export const TableCompanies = () => {
             The Home Depot, Inc.
           </td>
         </tr>
+
         <tr>
-          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
-                                        style={{ perspective: "1000px" }}
-                                        onClick={updateInput}>
+          <td
+            className={
+              "px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"
+            }
+            style={{ perspective: "1000px" }}
+            onClick={updateSymbol}
+          >
             DIS
           </td>
-          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform"}
-                                        style={{ perspective: "1000px" }}
-                                        onClick={updateInput}
+
+          <td
+            className={
+              "px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform"
+            }
+            style={{ perspective: "1000px" }}
+            onClick={updateSymbol}
           >
             The Walt Disney Company
           </td>
         </tr>
+
         <tr>
-          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
-                                        style={{ perspective: "1000px" }}
-                                        onClick={updateInput}
+          <td
+            className={
+              "px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"
+            }
+            style={{ perspective: "1000px" }}
+            oonClick={updateSymbol}
           >
             KO
           </td>
@@ -235,20 +252,19 @@ export const TableCompanies = () => {
           </td>
         </tr>
         <tr>
-
-          <td className={"px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"}
-                                        style={{ perspective: "1000px" }}
-                                        onClick={updateInput}
+          <td
+            className={
+              "px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"
+            }
+            style={{ perspective: "1000px" }}
+            onClick={updateSymbol}
           >
             PFE
           </td>
 
-
           <td className="px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform">
             Pfizer Inc.
           </td>
-
-          
         </tr>
       </tbody>
     </table>
