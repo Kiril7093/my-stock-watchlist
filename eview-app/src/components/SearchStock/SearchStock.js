@@ -57,7 +57,7 @@ export const SearchStock = () => {
             setStockArray([allStockDataObj, ...stockArray]);
           }
           
-          console.log(stockArray);
+          
           clearStockData();
         } else {
           setError(new Error("There is no such stock!"));
@@ -94,6 +94,8 @@ export const SearchStock = () => {
         >
           <SearchIcon className="h-4 w-4 fill-gray-100" />
         </button>
+
+
       </div>
       {error && <div className="text-red-500 text-center">{error.message}</div>}
     </form>

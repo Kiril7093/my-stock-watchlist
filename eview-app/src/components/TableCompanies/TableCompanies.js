@@ -3,10 +3,12 @@ import { useContext } from "react";
 import StockDataContext from "../../context/StockDataContext";
 
 export const TableCompanies = () => {
+  
   const {
     setSymbol,
   } = useContext(StockDataContext);
 
+  
   function updateSymbol(event) {
     const companySymbol = event.target.textContent;
 
@@ -243,7 +245,7 @@ export const TableCompanies = () => {
               "px-4 py-2 text-2xl text-zinc-700 font-semibold transform transition-transform hover:-translate-y-1 hover:scale-110 hover:text-zinc-500 cursor-pointer"
             }
             style={{ perspective: "1000px" }}
-            oonClick={updateSymbol}
+            onClick={updateSymbol}
           >
             KO
           </td>

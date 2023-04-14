@@ -28,13 +28,17 @@ function App() {
   const [change, setChange] = useState(null);
   const [changePercent, setChangePercent] = useState(null);
   const [currency, setCurrency] = useState(null);
+  const [oneWeekChartData, setOneWeekChartData]= useState(null);
+
+
  
   const clearStockData=()=>{
     setSymbol('');
     setPrice(null);
     setChange(null);
-    setChangePercent(null)
-    setCurrency(null)
+    setChangePercent(null);
+    setCurrency(null);
+    setOneWeekChartData(null);
   }
 
 
@@ -49,6 +53,9 @@ function App() {
     setChangePercent,
     currency,
     setCurrency,
+    oneWeekChartData, 
+
+    setOneWeekChartData,
     clearStockData
   };
 
