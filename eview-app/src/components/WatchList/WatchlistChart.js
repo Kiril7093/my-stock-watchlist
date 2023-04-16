@@ -3,24 +3,25 @@ import { fetchHistoricalData } from "../../api/stockApi";
 import { VictoryChart, VictoryCandlestick, VictoryTheme } from "victory";
 
 
+export const WatchlistChart = ({ symbol }) => {
 
-
-export const OneWeekChart = ({ symbol }) => {
-  const [oneWeekHistoricalData, setOneWeekHistoricalData] = useState(null);
+  const [watchlistHistoricalData, setWatchlistHistoricalData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const chartConfigKey = "1D";
+      const chartConfigKey = "1Y";
       const data = await fetchHistoricalData(symbol, chartConfigKey);
-      setOneWeekHistoricalData(data);
+
+      setWatchlistHistoricalData(data);
     };
     fetchData();
   }, [symbol]);
 
-  // Extract relevant data from oneWeekHistoricalData
+  // Extract relevant data from oneWeekHistoricalData oneweek
   let chartData = null;
-  if (oneWeekHistoricalData) {
-    const { c, h, l, o, t, v } = oneWeekHistoricalData;
+  if (watchlistHistoricalData) {
+ 
+    const { c, h, l, o, t, v } = watchlistHistoricalData;
     chartData = t.map((timestamp, index) => {
       return {
         x: new Date(timestamp * 1000),
@@ -61,5 +62,3 @@ export const OneWeekChart = ({ symbol }) => {
     </>
   );
 };
-
-

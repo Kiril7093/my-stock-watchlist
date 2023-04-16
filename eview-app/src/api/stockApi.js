@@ -1,4 +1,6 @@
 
+
+
 import {chartConfig} from "../constants/confic"
 
 const basePath = "https://finnhub.io/api/v1";

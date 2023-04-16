@@ -4,6 +4,8 @@ import StockArrayContext from "../../context/StockArrayContext";
 import { XIcon, SearchIcon } from "@heroicons/react/solid";
 import { fetchQuote } from "../../api/stockApi";
 
+
+
 export const SearchStock = () => {
   const {
     symbol,
@@ -23,6 +25,7 @@ export const SearchStock = () => {
     clearStockData();
   };
 
+  
   const handleSearch = (event) => {
     event.preventDefault();
 
@@ -33,6 +36,7 @@ export const SearchStock = () => {
     fetchQuote(symbol)
       .then((result) => {
         if (Object.values(result).some((val) => val)) {
+          
           setPrice(result.c);
           setChange(result.d);
           setChangePercent(result.dp);
@@ -61,11 +65,22 @@ export const SearchStock = () => {
           clearStockData();
         } else {
           setError(new Error("There is no such stock!"));
+
+          setTimeout(() => {
+            setError(null);
+          }, 1000);
+
+
           clearStockData();
         }
       })
       .catch((error) => {
         setError(new Error("There is no such stock!"));
+
+        setTimeout(() => {
+          setError(null);
+        }, 1000);
+        
       });
   };
 
@@ -74,13 +89,13 @@ export const SearchStock = () => {
 
 
   return (
-    <form onSubmit={handleSearch}>
+    <form onSubmit={handleSearch }>
       <div className="flex items-center">
         <input
           type="text"
-          value={symbol}
           className="w-80 marker:px-4 py-3 my-3 focus:outline-none rounded-md"
           placeholder="                Type stock symbol here..."
+          value={symbol}
           onChange={(event) => setSymbol(event.target.value)}
         />
         {symbol && (

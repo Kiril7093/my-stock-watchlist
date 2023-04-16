@@ -16,7 +16,10 @@ import {Logout} from "./components/Logout/Logout"
 
 import StockDataContext from './context/StockDataContext'
 import StockArrayContext from "./context/StockArrayContext";
+import WatchListContext from "./context/WatchlistContext";
+
 import { AuthProvider } from './context/AuthContext';
+
 
 
 
@@ -30,7 +33,9 @@ function App() {
   const [change, setChange] = useState(null);
   const [changePercent, setChangePercent] = useState(null);
   const [currency, setCurrency] = useState(null);
-  const [oneWeekChartData, setOneWeekChartData]= useState(null);
+  const [representativeChartData, setRepresentativeData]= useState(null);
+  const [error, setError] = useState(null);
+
 
 
  
@@ -40,7 +45,8 @@ function App() {
     setChange(null);
     setChangePercent(null);
     setCurrency(null);
-    setOneWeekChartData(null);
+    setRepresentativeData(null);
+    setError(null)
   }
 
 
@@ -55,14 +61,17 @@ function App() {
     setChangePercent,
     currency,
     setCurrency,
-    oneWeekChartData, 
-
-    setOneWeekChartData,
-    clearStockData
+    representativeChartData, 
+    setRepresentativeData,
+    clearStockData,
+    error, 
+    setError
   };
 
 
   const [stockArray, setStockArray]=useState([]);
+  const [watchlistArray, setWatchlistArray]=useState([]);
+  const [watchlistError, setWatchlistError]=useState(null);
 
 
 
@@ -93,6 +102,7 @@ function App() {
                
              <StockDataContext.Provider value={stockData}>
               <StockArrayContext.Provider value={{stockArray, setStockArray}}>
+                <WatchListContext.Provider value={{watchlistArray, setWatchlistArray, watchlistError, setWatchlistError}}>
               <Routes>
                 <Route path="/" element={<Hero />} />
                 <Route path="/dashboard" element={<Dashboard />} />
@@ -103,6 +113,7 @@ function App() {
                 <Route path="/logout" element={<Logout/>}/>
                 <Route path="/register" element={<Register />} />
               </Routes>
+              </WatchListContext.Provider>
               </StockArrayContext.Provider>
            </StockDataContext.Provider> 
 
