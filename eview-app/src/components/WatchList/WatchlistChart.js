@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { fetchHistoricalData } from "../../api/stockApi";
+
+
 import { VictoryChart, VictoryCandlestick, VictoryTheme } from "victory";
+
+
 
 
 export const WatchlistChart = ({ symbol }) => {
 
   const [watchlistHistoricalData, setWatchlistHistoricalData] = useState(null);
+
+
 
   useEffect(() => {
     const fetchData = async () => {

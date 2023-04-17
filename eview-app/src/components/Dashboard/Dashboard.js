@@ -6,11 +6,20 @@ import { TableCompanies } from "../TableCompanies/TableCompanies";
 import styles from "./Dashboard.module.css";
 import { LoadingCard } from "../LoadingCard/LoadingCard.js";
 import { stockServiceFactory } from "../../services/stockService";
+import { AuthContext } from "../../context/AuthContext";
+
+
+
+
+
+
+
+
 
 export const Dashboard = () => {
   const { stockArray, setStockArray } = useContext(StockArrayContext);
-
   const { setWatchlistError } = useContext(WatchListContext);
+  const { userId, token } = useContext(AuthContext);
 
   const removeStock = (symbol) => {
     const newStockArray = stockArray.filter((stock) => stock.symbol !== symbol);
@@ -18,10 +27,10 @@ export const Dashboard = () => {
   };
 
   const addToWatchlist = (value) => {
-    const stockService = stockServiceFactory();
-    
+    const stockService = stockServiceFactory(token, userId);
 
     const transferToWatchlist = async (value) => {
+
       try {
         const watchlist = await stockService.getAll();
         const check = watchlist.some((stock) => stock.symbol == value);
@@ -53,6 +62,7 @@ export const Dashboard = () => {
     transferToWatchlist(value);
   };
 
+  
   return (
     <div className={styles.container}>
       <div className="w-full h-70% bg-zinc-200 flex flex-row justify-between">
