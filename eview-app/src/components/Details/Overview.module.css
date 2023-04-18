@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--neutral-200);
+    border-radius: var(--rounded-md);
+    background-color: var(--white);
+  }
+  
+  .list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    margin-right: 8px;
+    padding: 8px;
+  }
+  
+  .item {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--black);
+  }
+  
+  .label {
+    font-weight: bold;
+    margin-right: 16px;
+  }
+  
+  .value {
+    font-weight: 400;
+    text-align: right;
+  }
+  

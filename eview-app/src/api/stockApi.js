@@ -3,6 +3,8 @@
 
 import {chartConfig} from "../constants/confic"
 
+
+
 const basePath = "https://finnhub.io/api/v1";
 
 export const fetchStockDetails = async (stockSymbol) => {

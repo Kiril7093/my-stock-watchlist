@@ -74,13 +74,14 @@ export const WatchlistCard = ({
       </div>
 
       <div className="h-55">
-        <WatchlistChart symbol={symbol} />
+        <WatchlistChart symbol={'AAPL'} />
       </div>
 
       <div className="flex justify-around mt-4">
         <Link
           to={`/watchlist/${id}`}
           className="h-11 w-48 bg-zinc-300 rounded-md flex justify-center items-center m-1 p2 transition duration-300 hover:bg-indigo-100"
+        
         >
           View Details
         </Link>
