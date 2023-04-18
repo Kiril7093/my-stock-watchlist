@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { stockServiceFactory } from "../../services/stockService";
 import WatchListContext from "../../context/WatchlistContext";
-
+import png4 from "../../asets/freePng4/png4.png"
 import { WatchlistCard } from "./WatchlistCard";
 import { AuthContext } from '../../context/AuthContext'
 
@@ -54,6 +54,12 @@ export const WatchList = () => {
   return (
     <div className='flex flex-col h-screen bg-zinc-200 mt-10 pt-10'>
       <h1 className="text-3xl font-bold mb-2 mt-10 pt-10 self-center">My Watchlist</h1>
+          
+
+           {watchlistArray.length===0&&(
+
+              <img src={png4} className="w-90%" alt="/" />
+           )}
 
       <div className="flex items-center justify-center flex-1">
         <div className="flex flex-wrap justify-center gap-4" style={{ maxHeight: "calc(100vh - 300px)", overflowY: "auto" }}>

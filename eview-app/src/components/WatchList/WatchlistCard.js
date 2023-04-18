@@ -80,7 +80,7 @@ export const WatchlistCard = ({
       <div className="flex justify-around mt-4">
         <Link
           to={`/watchlist/${id}`}
-          className="h-11 w-48 bg-zinc-300 rounded-md flex justify-center items-center m-1 p2 transition duration-300 hover:bg-indigo-100"
+          className='h-11 w-48 bg-indigo-700 text-white rounded-md flex justify-center items-center m-1 p2 transition duration-300 hover:bg-indigo-500'
         
         >
           View Details

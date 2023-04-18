@@ -7,6 +7,7 @@ import styles from "./Dashboard.module.css";
 import { LoadingCard } from "../LoadingCard/LoadingCard.js";
 import { stockServiceFactory } from "../../services/stockService";
 import { AuthContext } from "../../context/AuthContext";
+import pic2 from "../../asets/freePng3/png3.png"
 
 export const Dashboard = () => {
   const { stockArray, setStockArray } = useContext(StockArrayContext);
@@ -84,6 +85,12 @@ export const Dashboard = () => {
             </button>
           )}
 
+          {stockArray.length === 0&& (
+             <img src={pic2} className="w-full" alt="/" />
+
+          )}
+
+
           <div className="list-none">
             {" "}
             {stockArray.reverse().map((a) => (
@@ -96,6 +103,9 @@ export const Dashboard = () => {
               </li>
             ))}
           </div>
+
+
+
         </div>
 
         <div className={styles.table}>
