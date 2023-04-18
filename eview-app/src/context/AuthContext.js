@@ -16,6 +16,8 @@ export const AuthProvider = ({
 
     const authService = authServiceFactory(auth.accessToken)
 
+
+
     const onLoginSubmit = async (data) => {
         try {
             const result = await authService.login(data);
@@ -28,6 +30,8 @@ export const AuthProvider = ({
         }
     };
 
+
+    
     const onRegisterSubmit = async (values) => {
         const { confirmPassword, ...registerData } = values;
         if (confirmPassword !== registerData.password) {

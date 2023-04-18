@@ -50,18 +50,10 @@ export const Details = () => {
 
 
       <div className="col-span-1 md:col-span-2 xl:col-span-3 row-span-1 flex justify-start items-center">
-        {stockObj ? (
-          <div className="mt-28 pt-28 absolute top-1/2 left-1/2">
-           <h1> {stockObj.symbol} </h1>
-          </div>
-        ) : (
-          <div className="mt-28 pt-28 absolute top-1/2 left-1/2">
-            Loading...
-          </div>
-        )}
+
       </div>
 
-      <div className="md:col-span-2 row-span-4 ">
+      <div className='md:col-span-2 row-span-4 mr-20 ml-0'>
         {stockObj ? (
           <div className="grid grid-cols-12 grid-rows-8 gap-4 p-10 font-quicksand">
             <div className="col-start-2 col-end-11 row-start-1 row-end-7 -mt-20  ">

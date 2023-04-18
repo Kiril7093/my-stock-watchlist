@@ -7,19 +7,14 @@ import { fetchQuote } from "../../api/stockApi";
 
 
 export const SearchStock = () => {
-  const {
-    symbol,
-    setSymbol,
-    setPrice,
-    setChange,
-    setChangePercent,
-    setCurrency,
-    clearStockData,
-  } = useContext(StockDataContext);
 
+
+  const { symbol, setSymbol, clearStockData} = useContext(StockDataContext);
   const { stockArray, setStockArray } = useContext(StockArrayContext);
 
-  const [error, setError] = useState(null);
+const [error, setError] = useState(null);
+
+
 
   const clear = () => {
     clearStockData();
@@ -36,11 +31,7 @@ export const SearchStock = () => {
     fetchQuote(symbol)
       .then((result) => {
         if (Object.values(result).some((val) => val)) {
-          
-          setPrice(result.c);
-          setChange(result.d);
-          setChangePercent(result.dp);
-          setCurrency("USD");
+
           setError(null);
 
           const allStockDataObj = {

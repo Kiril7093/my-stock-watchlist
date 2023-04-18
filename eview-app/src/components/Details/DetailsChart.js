@@ -41,11 +41,11 @@ export const DetailsChart = ({ symbol }) => {
   
     return (
       <>
-<div style={{ fontSize: "1.5rem" }}>
+<div style={{ fontSize: "1.5rem"  }}>
   <select
     value={chartConfigKey}
     onChange={handleTimeframeChange}
-    style={{ fontSize: "1.5rem", padding: "0.5rem" }}
+    style={{ fontSize: "1.5rem", padding: "0.5rem", marginLeft: '2rem' }}
   >
     <option value="1D">1 Day</option>
     <option value="1W">1 Week</option>
@@ -62,7 +62,7 @@ export const DetailsChart = ({ symbol }) => {
           </h1>
         )}
         {chartData && (
-          <div>
+          <div className='mr-10 pr-10 ml-0 pl-0'>
             <VictoryChart
               scale={{ x: "continuous" }}
               style={{
