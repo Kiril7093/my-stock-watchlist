@@ -8,14 +8,6 @@ import { LoadingCard } from "../LoadingCard/LoadingCard.js";
 import { stockServiceFactory } from "../../services/stockService";
 import { AuthContext } from "../../context/AuthContext";
 
-
-
-
-
-
-
-
-
 export const Dashboard = () => {
   const { stockArray, setStockArray } = useContext(StockArrayContext);
   const { setWatchlistError } = useContext(WatchListContext);
@@ -30,7 +22,6 @@ export const Dashboard = () => {
     const stockService = stockServiceFactory(token, userId);
 
     const transferToWatchlist = async (value) => {
-
       try {
         const watchlist = await stockService.getAll();
         const check = watchlist.some((stock) => stock.symbol == value);
@@ -62,7 +53,6 @@ export const Dashboard = () => {
     transferToWatchlist(value);
   };
 
-  
   return (
     <div className={styles.container}>
       <div className="w-full h-70% bg-zinc-200 flex flex-row justify-between">

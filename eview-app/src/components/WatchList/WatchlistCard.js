@@ -3,10 +3,15 @@ import { WatchlistChart } from "./WatchlistChart";
 import { XIcon } from "@heroicons/react/solid";
 import { AuthContext } from "../../context/AuthContext";
 import WatchListContext from "../../context/WatchlistContext";
+import { Link } from "react-router-dom";
 
 import { fetchQuote } from "../../api/stockApi.js";
 
-export const WatchlistCard = ({ symbol, deleteWatchlistRecord }) => {
+export const WatchlistCard = ({
+  symbol,
+  "data-id": id,
+  deleteWatchlistRecord,
+}) => {
   const [stockData, setStockData] = useState(null);
 
   useEffect(() => {
@@ -43,11 +48,11 @@ export const WatchlistCard = ({ symbol, deleteWatchlistRecord }) => {
         {symbol}
       </span>
 
-      <button data-symbol={symbol} onClick={() => deleteWatchlistRecord(symbol)}>
+      <button onClick={() => deleteWatchlistRecord(id)}>
         <XIcon className="h-5 w-5 text-neutral-400 absolute right-4 top-4" />
       </button>
 
-      <div className='w-full  flex items-center justify-around'>
+      <div className="w-full  flex items-center justify-around">
         {stockData && (
           <span className="text-2xl xl:text-4xl 2xl:text-5xl flex items-center">
             ${stockData.price}
@@ -68,19 +73,17 @@ export const WatchlistCard = ({ symbol, deleteWatchlistRecord }) => {
         )}
       </div>
 
-      <div className="h-55" >
-
-      <WatchlistChart symbol={symbol} />
-
+      <div className="h-55">
+        <WatchlistChart symbol={symbol} />
       </div>
 
-
       <div className="flex justify-around mt-4">
-        <button
-          className="h-11 w-48 bg-indigo-700 rounded-md flex justify-center items-center m-1 p2 transition duration-300 hover:bg-indigo-100"
+        <Link
+          to={`/watchlist/${id}`}
+          className="h-11 w-48 bg-zinc-300 rounded-md flex justify-center items-center m-1 p2 transition duration-300 hover:bg-indigo-100"
         >
-          Details
-        </button>
+          View Details
+        </Link>
       </div>
     </div>
   );

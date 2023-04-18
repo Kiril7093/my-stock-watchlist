@@ -1,0 +1,32 @@
+.container {
+
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 100px);
+  }
+  
+
+  .search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 10rem;
+  }
+
+
+
+
+
+
+  
+  .table{
+
+    padding-top: 5rem;
+    margin-top: 5rem;
+    width: 30%;
+
+
+
+  }
+

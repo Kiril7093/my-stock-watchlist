@@ -30,7 +30,7 @@ export const stockServiceFactory = (token, userId) => {
   };
 
   const edit = (stockSymbolId, data) => request.put(`${url}/${stockSymbolId}`, data);
-
+  
   const deleteStock = (stockId) => request.delete(`${url}/${stockId}`);
 
   return {

@@ -37,16 +37,12 @@ export const WatchList = () => {
   
    
 
-  const deleteWatchlistRecord= async (symbol)=>{
+  const deleteWatchlistRecord= async (id)=>{
 
     
-    const watchlist= await stockService.getAll();
+    const deletedStock= await stockService.delete(id);
 
-    const stockForDeletion=watchlist.find(a=>a.symbol===symbol)
-    
-    const deletedStock= await stockService.delete(stockForDeletion._id);
-
-    const newArray = watchlistArray.filter(a=>a.symbol!==symbol);
+    const newArray = watchlistArray.filter(a=>a._id!==id);
 
     setWatchlistArray(newArray);
 
@@ -69,8 +65,7 @@ export const WatchList = () => {
               >
 
    
-
-                {<WatchlistCard symbol={stock.symbol} deleteWatchlistRecord={deleteWatchlistRecord} />  }
+                {<WatchlistCard symbol={stock.symbol} data-id={stock._id} deleteWatchlistRecord={deleteWatchlistRecord} />  }
               </div>
             )
           ))}
