@@ -9,7 +9,9 @@ export const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div className="px-2 flex justify-between items-center w-full h-full">
-        <ul className="flex justify-center">
+
+
+        <ul className="flex justify-center ml-44">
           <li className={styles.navlink}>
             <Link to="/">Home</Link>
           </li>
@@ -23,6 +25,8 @@ export const Navbar = () => {
           </li>)}
 
         </ul>
+
+
         {isAuthenticated && (
         <span>My email: {userEmail}</span>
         )}

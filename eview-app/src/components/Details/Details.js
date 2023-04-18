@@ -64,7 +64,7 @@ export const Details = () => {
       <div className="md:col-span-2 row-span-4 ">
         {stockObj ? (
           <div className="grid grid-cols-12 grid-rows-8 gap-4 p-10 font-quicksand">
-            <div className="col-start-2 col-end-11 row-start-2 row-end-7 -mt-20  ">
+            <div className="col-start-2 col-end-11 row-start-1 row-end-7 -mt-20  ">
               <DetailsChart symbol={stockObj.symbol} />
             </div>
           </div>

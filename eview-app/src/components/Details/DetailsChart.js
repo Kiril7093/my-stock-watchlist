@@ -41,16 +41,21 @@ export const DetailsChart = ({ symbol }) => {
   
     return (
       <>
-        <div>
-          <select value={chartConfigKey} onChange={handleTimeframeChange}>
-            <option value="1D">1 Day</option>
-            <option value="1W">1 Week</option>
-            <option value="1M">1 Month</option>
-            <option value="1Y">1 Year</option>
-            <option value="1W_1H">1 Week (1 Hour)</option>
-            <option value="5Y">5 Years</option>
-          </select>
-        </div>
+<div style={{ fontSize: "1.5rem" }}>
+  <select
+    value={chartConfigKey}
+    onChange={handleTimeframeChange}
+    style={{ fontSize: "1.5rem", padding: "0.5rem" }}
+  >
+    <option value="1D">1 Day</option>
+    <option value="1W">1 Week</option>
+    <option value="1M">1 Month</option>
+    <option value="1Y">1 Year</option>
+    <option value="1W_1H">1 Week (1 Hour)</option>
+    <option value="5Y">5 Years</option>
+  </select>
+</div>
+
         {chartData && (
           <h1 style={{ textAlign: "center", fontSize: "3rem", fontWeight: "bold" }}>
             {symbol}
@@ -67,7 +72,7 @@ export const DetailsChart = ({ symbol }) => {
                 },
               }}
             >
-              <VictoryLine
+              {/* <VictoryLine
                 style={{
                   data: {
                     stroke: "blue",
@@ -78,7 +83,7 @@ export const DetailsChart = ({ symbol }) => {
                 data={chartData}
                 x="x"
                 y="close"
-              />
+              /> */}
               <VictoryCandlestick
                 candleColors={{ positive: "#00b894", negative: "#d63031" }}
                 style={{

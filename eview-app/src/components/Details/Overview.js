@@ -1,6 +1,6 @@
 import { fetchStockDetails } from "../../api/stockApi";
 import { useEffect, useState } from "react";
-import {styles} from './Overview.module.css'
+import { styles } from "./Overview.module.css";
 
 export const Overview = ({ symbol }) => {
   const [stockDetails, setStockDetails] = useState(null);
@@ -34,7 +34,7 @@ export const Overview = ({ symbol }) => {
     name: "Name",
     country: "Country",
     currency: "Currency",
-    exchange: "Exchange",
+    exchange: "",
     ipo: "IPO Date",
     marketCapitalization: "Market Capitalization",
     finnhubIndustry: "Industry",
@@ -50,8 +50,8 @@ export const Overview = ({ symbol }) => {
         {Object.keys(detailsList).map((item) => {
           return (
             <li key={item} className="flex-1 flex justify-between items-center">
-              <span className="text-black">{detailsList[item]}</span>
-              <span className="text-black">
+              <span  className="text-black text-2xl font-extrabold">{detailsList[item]}</span>
+              <span className="text-black text-2xl font-extrabold">
                 {stockDetails && item === "marketCapitalization"
                   ? `${convertMillionToBillion(stockDetails[item])}`
                   : stockDetails && stockDetails[item]}
