@@ -6,12 +6,18 @@ import { Link } from "react-router-dom";
 
 import { fetchQuote } from "../../api/stockApi.js";
 
+
+
 export const WatchlistCard = ({
   symbol,
   "data-id": id,
   deleteWatchlistRecord,
 }) => {
   const [stockData, setStockData] = useState(null);
+
+
+
+
 
   useEffect(() => {
     function loadStock() {
@@ -38,6 +44,8 @@ export const WatchlistCard = ({
 
     loadStock();
   }, [symbol]);
+
+
 
   return (
     <div
@@ -73,7 +81,7 @@ export const WatchlistCard = ({
       </div>
 
       <div className="h-55">
-        <WatchlistChart symbol={'AAPL'} />
+        <WatchlistChart symbol={symbol} />
       </div>
 
       <div className="flex justify-around mt-4">

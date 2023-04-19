@@ -11,8 +11,7 @@ export const SearchStock = () => {
 
   const { symbol, setSymbol, clearStockData} = useContext(StockDataContext);
   const { stockArray, setStockArray } = useContext(StockArrayContext);
-
-const [error, setError] = useState(null);
+  const [error, setError] = useState(null);
 
 
 

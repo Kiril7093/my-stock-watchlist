@@ -18,6 +18,8 @@ export const WatchList = () => {
 
   const stockService = stockServiceFactory(token, userId);
 
+
+  
   useEffect(() => {
     const fetchWatchlist = async () => {
       try {

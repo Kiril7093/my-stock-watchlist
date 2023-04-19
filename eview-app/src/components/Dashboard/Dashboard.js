@@ -10,7 +10,10 @@ import { AuthContext } from "../../context/AuthContext";
 import pic2 from "../../asets/freePng3/png3.png"
 
 export const Dashboard = () => {
+
   const { stockArray, setStockArray } = useContext(StockArrayContext);
+
+
   const { setWatchlistError } = useContext(WatchListContext);
   const { userId, token } = useContext(AuthContext);
 
@@ -18,6 +21,8 @@ export const Dashboard = () => {
     const newStockArray = stockArray.filter((stock) => stock.symbol !== symbol);
     setStockArray(newStockArray);
   };
+
+
 
   const addToWatchlist = (value) => {
     const stockService = stockServiceFactory(token, userId);
@@ -33,6 +38,8 @@ export const Dashboard = () => {
           await stockService.create(obj);
 
           removeStock(value);
+
+
         } else {
           setWatchlistError({
             message: "This stock is already in your watchlist!",
@@ -51,8 +58,12 @@ export const Dashboard = () => {
       }
     };
 
+    
+
     transferToWatchlist(value);
   };
+
+
 
   return (
     <div className={styles.container}>
