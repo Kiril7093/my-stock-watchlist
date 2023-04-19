@@ -5,11 +5,12 @@ import WatchListContext from "../../context/WatchlistContext";
 import { WatchlistCard } from "./WatchlistCard";
 import { AuthContext } from "../../context/AuthContext";
 
+
+
 export const WatchList = () => {
   const {
     watchlistArray,
     setWatchlistArray,
-    watchlistError,
     setWatchlistError,
   } = useContext(WatchListContext);
 
