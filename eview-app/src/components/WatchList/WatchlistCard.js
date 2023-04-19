@@ -1,8 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { WatchlistChart } from "./WatchlistChart";
 import { XIcon } from "@heroicons/react/solid";
-import { AuthContext } from "../../context/AuthContext";
-import WatchListContext from "../../context/WatchlistContext";
+
 import { Link } from "react-router-dom";
 
 import { fetchQuote } from "../../api/stockApi.js";

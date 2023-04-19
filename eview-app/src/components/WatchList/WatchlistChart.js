@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { fetchHistoricalData } from "../../api/stockApi";
 
 
-import { VictoryChart, VictoryCandlestick, VictoryTheme } from "victory";
+import { VictoryChart, VictoryCandlestick} from "victory";
 
 
 

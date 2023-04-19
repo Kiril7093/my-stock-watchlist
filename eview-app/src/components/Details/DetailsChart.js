@@ -3,6 +3,8 @@ import { fetchHistoricalData } from "../../api/stockApi";
 
 import { VictoryChart, VictoryCandlestick, VictoryTheme, VictoryLine } from "victory";
 
+import  styles from "./DetailsChart.module.css"
+
 
 
 
@@ -41,11 +43,11 @@ export const DetailsChart = ({ symbol }) => {
   
     return (
       <>
-<div style={{ fontSize: "1.5rem"  }}>
+ <div className={styles['chart-select-container']} style={{ float: 'left' }}>
   <select
     value={chartConfigKey}
     onChange={handleTimeframeChange}
-    style={{ fontSize: "1.5rem", padding: "0.5rem", marginLeft: '2rem' }}
+    className={styles['chart-select']}
   >
     <option value="1D">1 Day</option>
     <option value="1W">1 Week</option>
@@ -55,6 +57,7 @@ export const DetailsChart = ({ symbol }) => {
     <option value="5Y">5 Years</option>
   </select>
 </div>
+
 
         {chartData && (
           <h1 style={{ textAlign: "center", fontSize: "3rem", fontWeight: "bold" }}>
