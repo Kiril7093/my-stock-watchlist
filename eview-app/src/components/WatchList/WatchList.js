@@ -32,6 +32,9 @@ export const WatchList = () => {
     fetchWatchlist();
   }, []);
 
+
+
+  
   const deleteWatchlistRecord = async (id) => {
     const deletedStock = await stockService.delete(id);
 
@@ -39,6 +42,9 @@ export const WatchList = () => {
 
     setWatchlistArray(newArray);
   };
+
+
+
 
   return (
     <div className="flex flex-col h-screen bg-zinc-200 mt-10 pt-10">

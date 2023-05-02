@@ -8,10 +8,18 @@ export const AuthContext = createContext();
 
 
 
+
+
+
+
 export const AuthProvider = ({
     children,
 }) => {
     const [auth, setAuth] = useLocalStorage('auth', {});
+
+    const [authError, setAuthError] =useState(null);
+
+
     const navigate = useNavigate();
 
     const authService = authServiceFactory(auth.accessToken)
@@ -26,7 +34,8 @@ export const AuthProvider = ({
 
             navigate('/dashboard');
         } catch (error) {
-            console.log('There is a problem');
+     
+            setAuthError(error.message)
         }
     };
 
@@ -45,7 +54,8 @@ export const AuthProvider = ({
 
             navigate('/dashboard');
         } catch (error) {
-            console.log('There is a problem');
+            console.log(error.message);
+            setAuthError(error.message)
         }
     };
 
@@ -55,7 +65,11 @@ export const AuthProvider = ({
         setAuth({});
     };
 
+
+
+
     const contextValues = {
+        authError,
         onLoginSubmit,
         onRegisterSubmit,
         onLogout,

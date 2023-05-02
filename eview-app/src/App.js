@@ -14,8 +14,10 @@ import { Details } from "./components/Details/Details";
 import StockDataContext from "./context/StockDataContext";
 import StockArrayContext from "./context/StockArrayContext";
 import WatchListContext from "./context/WatchlistContext";
+
 import { AuthProvider } from "./context/AuthContext";
 import { Edit } from "./components/Edit/Edit";
+
 
 function App() {
   const [symbol, setSymbol] = useState("");
@@ -38,6 +40,7 @@ function App() {
   const [watchlistArray, setWatchlistArray] = useState([]);
   const [watchlistError, setWatchlistError] = useState(null);
 
+
   return (
     <AuthProvider>
       <div className="App">
@@ -48,6 +51,7 @@ function App() {
               <WatchListContext.Provider
                 value={{ watchlistArray, setWatchlistArray, watchlistError, setWatchlistError }}
               >
+
                 <Routes>
                   <Route path="/" element={<Hero />} />
                   <Route path="/login" element={<Login />} />
@@ -59,6 +63,7 @@ function App() {
                   <Route path="/watchlist/:id/edit" element={<Edit />} />
                   <Route path="*" element={<Error404 />} />
                 </Routes>
+
               </WatchListContext.Provider>
             </StockArrayContext.Provider>
           </StockDataContext.Provider>

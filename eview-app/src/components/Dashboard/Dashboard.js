@@ -24,7 +24,10 @@ export const Dashboard = () => {
 
 
 
+
+
   const addToWatchlist = (value) => {
+
     const stockService = stockServiceFactory(token, userId);
 
     const transferToWatchlist = async (value) => {
@@ -62,6 +65,12 @@ export const Dashboard = () => {
 
     transferToWatchlist(value);
   };
+
+
+  
+
+
+  
 
 
 

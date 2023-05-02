@@ -9,7 +9,7 @@ import { AuthContext } from "../../context/AuthContext";
 export const Register = () => {
 
 
-  const { onRegisterSubmit } = useContext(AuthContext);
+  const { onRegisterSubmit, authError } = useContext(AuthContext);
 
   const { values, changeHandler, onSubmit } = useForm(
     {
@@ -19,6 +19,9 @@ export const Register = () => {
     },
     onRegisterSubmit
   );
+
+
+
 
   return (
     <div className="w-full h-screen bg-zinc-200 flex flex-col justify-center items-center">
@@ -75,8 +78,9 @@ export const Register = () => {
         </div>
 
         <input className={styles["form-button"]} type="submit" value="Register"/>
-
+          <div>{authError}</div>
       </form>
+
     </div>
   );
 };
