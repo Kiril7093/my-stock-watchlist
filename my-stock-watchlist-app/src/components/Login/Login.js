@@ -29,7 +29,7 @@ export const Login = () => {
         onSubmit={onSubmit}
       >
         <h3 className={`flex justify-center ${styles["form-title"]}`}>
-          EquityView
+         Login
         </h3>
         <div className="flex flex-col py-2">
           <label className="text-lg flex justify-center">Email</label>

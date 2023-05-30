@@ -33,7 +33,7 @@ export const Register = () => {
         className={`rounded-lg ${styles["form-container"]}`}
       >
         <h3 className={`flex justify-center ${styles["form-title"]}`}>
-          EquityView
+          Register
         </h3>
 
 
