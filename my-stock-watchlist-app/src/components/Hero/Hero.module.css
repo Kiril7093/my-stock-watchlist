@@ -1,24 +1,50 @@
 .heroBackground {
-    background-color: #f2f2f2;
-  }
-  
-  .heroContent {
-    padding-top: 200px;
-    padding-bottom: 50px;
-  }
-  
-  .heroText {
-    max-width: 500px;
-  }
-  
-  .heroButton {
+  background-color: #f2f2f2;
+}
 
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-  }
-  
-  .heroImage {
-    padding-top: 20px;
-  }
-  
+.heroContent {
+  padding-top: 200px;
+  padding-bottom: 50px;
+
+}
+
+.heroTitle{
+  color: rgb(32, 32, 32);
+}
+
+.heroText {
+  max-width: 500px;
+}
+
+.heroSubTitle{
+  align-self: center;
+  padding-left: 50px;
+  margin-left: 57px;
+  color: rgb(32, 32, 32);
+
+}
+
+.heroExplanation{
+  padding-left: 50px;
+  margin-left: 57px;
+  color: rgb(32, 32, 32);
+
+
+
+
+
+}
+
+.heroButton {
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  align-self: center;
+  margin-left: 110px;
+}
+
+.heroImage {
+  padding-top: 20px;
+  padding-left: 50px;
+  margin-left: 50px;
+}
