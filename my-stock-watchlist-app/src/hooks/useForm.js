@@ -1,22 +1,34 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { AuthContext } from '../context/AuthContext.js';
+
+
+
 
 
 
 
 
 export const useForm = (initialValues, onSubmitHandler) => {
-    const [values, setValues] = useState(initialValues);
 
+    const {  authError, setAuthError } = useContext(AuthContext);
+
+    
+    const [values, setValues] = useState(initialValues);
     const changeHandler = (e) => {
         setValues(state => ({...state, [e.target.name]: e.target.value}));
     };
 
     const onSubmit = (e) => {
+
         e.preventDefault();
+    
 
         onSubmitHandler(values);
 
         setValues(initialValues);
+
+
+
     };
 
     const changeValues = (newValues) => {

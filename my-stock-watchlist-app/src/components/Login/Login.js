@@ -1,9 +1,13 @@
 import styles from "./Login.module.css";
 
-import { Link } from "react-router-dom";
-
 import { useAuthContext } from "../../context/AuthContext";
 import { useForm } from "../../hooks/useForm";
+import { Modal } from "../Modal/Modal.js";
+
+import { useState, useEffect } from "react";
+import { AuthContext } from "../../context/AuthContext";
+
+
 
 const LoginFormKeys = {
   Email: "email",
@@ -11,7 +15,8 @@ const LoginFormKeys = {
 };
 
 export const Login = () => {
-  const { onLoginSubmit } = useAuthContext();
+  const { onLoginSubmit,  authError, setAuthError  } = useAuthContext();
+
   const { values, changeHandler, onSubmit } = useForm(
     {
       [LoginFormKeys.Email]: "",
@@ -19,6 +24,37 @@ export const Login = () => {
     },
     onLoginSubmit
   );
+
+
+
+
+ 
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
+
+
+
+  useEffect(() => {
+    if (authError) {
+      setShowErrorMessage(true);
+      const timeout = setTimeout(() => {
+        setShowErrorMessage(false);
+        setAuthError(null); // Moved outside the return statement
+      }, 1000);
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [authError]);
+  
+
+
+
+
+
+
+
+
+
 
   return (
     <div className="w-full h-screen bg-zinc-200 flex flex-col justify-center items-center">
@@ -61,6 +97,16 @@ export const Login = () => {
 
 
       </form>
+
+      {showErrorMessage && (
+
+          <>
+            <Modal authError={authError} />
+        
+          </>
+        )}
+
+
     </div>
   );
 };
