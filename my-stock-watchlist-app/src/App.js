@@ -14,9 +14,9 @@ import { Details } from "./components/Details/Details";
 import StockDataContext from "./context/StockDataContext";
 import StockArrayContext from "./context/StockArrayContext";
 import WatchListContext from "./context/WatchlistContext";
-
 import { AuthProvider } from "./context/AuthContext";
 import { Edit } from "./components/Edit/Edit";
+import { RouteGuard } from "./components/common/RoutGuard.js";
 
 
 function App() {
@@ -58,9 +58,15 @@ function App() {
                   <Route path="/register" element={<Register />} />
                   <Route path="/logout" element={<Logout />} />
                   <Route path="/dashboard" element={<Dashboard />} />
-                  <Route path="/watchlist" element={<WatchList />} />
-                  <Route path="/watchlist/:id" element={<Details />} />
-                  <Route path="/watchlist/:id/edit" element={<Edit />} />
+
+                  <Route element={<RouteGuard/>}>
+                    <Route path="/watchlist" element={<WatchList />} />
+                    <Route path="/watchlist/:id" element={<Details />} />
+                    <Route path="/watchlist/:id/edit" element={<Edit />} />
+
+                  </Route>
+
+
                   <Route path="*" element={<Error404 />} />
                 </Routes>
 
