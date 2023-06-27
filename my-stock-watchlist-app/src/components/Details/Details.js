@@ -5,7 +5,6 @@ import { stockServiceFactory } from "../../services/stockService";
 import { AuthContext } from "../../context/AuthContext";
 import { DetailsChart } from "./DetailsChart";
 import { Overview } from "./Overview.js";
-import {styles} from "./Details.module.css"
 import { Link } from "react-router-dom";
 
 export const Details = () => {

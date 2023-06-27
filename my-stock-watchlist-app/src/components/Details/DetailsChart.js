@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchHistoricalData } from "../../api/stockApi";
 
-import { VictoryChart, VictoryCandlestick, VictoryTheme, VictoryLine } from "victory";
+import { VictoryChart, VictoryCandlestick} from "victory";
 
 import  styles from "./DetailsChart.module.css"
 

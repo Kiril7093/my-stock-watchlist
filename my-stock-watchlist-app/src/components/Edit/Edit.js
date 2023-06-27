@@ -1,6 +1,6 @@
 import styles from "./Edit.module.css";
 import { useContext, useEffect, useState, useRef } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import {useParams, useNavigate } from "react-router-dom";
 import { stockServiceFactory } from "../../services/stockService";
 import { AuthContext } from "../../context/AuthContext";
 import WatchListContext from "../../context/WatchlistContext";
@@ -8,7 +8,7 @@ import { fetchQuote } from "../../api/stockApi";
 
 
 export const Edit = () => {
-  const { watchlistArray, setWatchlistArray } = useContext(WatchListContext);
+
 
   const { userId, token } = useContext(AuthContext);
   const stockService = stockServiceFactory(token, userId);

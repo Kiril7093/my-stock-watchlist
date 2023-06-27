@@ -1,6 +1,5 @@
 import { fetchStockDetails } from "../../api/stockApi";
 import { useEffect, useState } from "react";
-import { styles } from "./Overview.module.css";
 
 export const Overview = ({ symbol }) => {
   const [stockDetails, setStockDetails] = useState(null);

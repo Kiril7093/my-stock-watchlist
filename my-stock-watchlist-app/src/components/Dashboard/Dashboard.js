@@ -33,7 +33,7 @@ export const Dashboard = () => {
     const transferToWatchlist = async (value) => {
       try {
         const watchlist = await stockService.getAll();
-        const check = watchlist.some((stock) => stock.symbol == value);
+        const check = watchlist.some((stock) => stock.symbol === value);
 
         if (check === false) {
           const obj = { symbol: value };

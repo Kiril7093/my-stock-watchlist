@@ -1,7 +1,7 @@
 import styles from "./Register.module.css";
 
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+
 
 import { useForm } from "../../hooks/useForm";
 import { AuthContext } from "../../context/AuthContext";
@@ -41,7 +41,7 @@ export const Register = () => {
         clearTimeout(timeout);
       };
     }
-  }, [authError]);
+  }, [authError, setAuthError]);
   
 
 
